@@ -1,52 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact form for Frontend Mentor" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Contact form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Contact Us
-
-  First Name
-  This field is required
-
-  Last Name
-  This field is required
-
-  Email Address
-  Please enter a valid email address
-  This field is required
-
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
-
-  Message
-  This field is required
-
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
-
-  Submit
-
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <title>Frontend Mentor | Contact form</title>
+  </head>
+  <body>
+    <main class="container">
+      <section class="contact">
+        <h1 class="title">Contact Us</h1>
+        <form class="form" novalidate>
+          <div class="form-group first-name">
+            <label for="first-name">First Name <span aria-hidden="true">*</span></label>
+            <input
+              type="text"
+              id="first-name"
+              name="first-name"
+              required
+              aria-describedby="first-name-error"
+            />
+            <p class="error" id="first-name-error">This field is required</p>
+          </div>
+          <div class="form-group last-name">
+            <label for="last-name">Last Name <span aria-hidden="true">*</span></label>
+            <input
+              type="text"
+              id="last-name"
+              name="last-name"
+              required
+              aria-describedby="last-name-error"
+            />
+            <p class="error" id="last-name-error">This field is required</p>
+          </div>
+          <div class="form-group email">
+            <label for="email">Email Address <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" required aria-describedby="email-error" />
+            <p class="error" id="email-error">Please enter a valid email address</p>
+          </div>
+          <fieldset class="form-group query-type">
+            <legend>Query Type <span aria-hidden="true">*</span></legend>
+            <div class="query-group">
+              <div class="form-item">
+                <input
+                  type="radio"
+                  id="general-enquiry"
+                  name="query-type"
+                  value="general"
+                  required
+                  aria-describedby="query-error"
+                />
+                <label for="general-enquiry">General Enquiry</label>
+              </div>
+              <div class="form-item">
+                <input
+                  type="radio"
+                  id="support-request"
+                  name="query-type"
+                  value="support"
+                  required
+                  aria-describedby="query-error"
+                />
+                <label for="support-request">Support Request</label>
+              </div>
+            </div>
+            <p class="error" id="query-error">Please select a query type</p>
+          </fieldset>
+          <div class="form-group message">
+            <label for="message">Message <span aria-hidden="true">*</span></label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              aria-describedby="message-error"
+            ></textarea>
+            <p class="error" id="message-error">This field is required</p>
+          </div>
+          <div class="form-group consent">
+            <div class="checkbox-wrapper">
+              <input
+                type="checkbox"
+                id="consent"
+                name="consent"
+                required
+                aria-describedby="consent-error"
+              />
+              <label for="consent">
+                I consent to being contacted by the team <span aria-hidden="true">*</span>
+              </label>
+            </div>
+            <p class="error" id="consent-error">
+              To submit this form, please consent to being contacted
+            </p>
+          </div>
+          <button type="submit" class="btn-primary">Submit</button>
+        </form>
+        <div class="notification">
+          <h2 class="notification-title">Message Sent!</h2>
+          <p class="notification-message">
+            Thanks for completing the form. We'll be in touch soon!
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
