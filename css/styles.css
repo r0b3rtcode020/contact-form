@@ -1,0 +1,97 @@
+@font-face {
+  font-family: "Karla";
+  src: url("../assets/fonts/Karla-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/****************************************************
+ ******************   VARIABLES   *******************
+ ****************************************************/
+
+:root {
+  /* Colors */
+  --clr-green-200: #e0f1e8;
+  --clr-green-600: #0c7d69;
+  --clr-grey-500: #86a2a5;
+  --clr-grey-900: #2a4144;
+  --clr-red: #d73c3c;
+  --clr-white: #ffffff;
+
+  /* Font Family */
+  --ff-primary: "Karla", sans-serif;
+
+  /* Font Size */
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-32: 2rem;
+
+  /* Font Weight */
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  /* Line Height */
+  --lh-100: 1;
+  --lh-150: 1.5;
+
+  /* Spacing */
+  --sp-8: 0.5rem;
+  --sp-12: 0.75rem;
+  --sp-16: 1rem;
+  --sp-24: 1.5rem;
+  --sp-32: 2rem;
+  --sp-40: 2.5rem;
+  --sp-128: 8rem;
+}
+
+/****************************************************
+ *******************   RESET   **********************
+ ****************************************************/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overscroll-behavior-inline: none;
+  background-color: var(--clr-green-200);
+}
+
+body {
+  min-height: 100dvh;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-16);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-150);
+  color: var(--clr-grey-900);
+}
+
+p,
+h1,
+label,
+legend {
+  overflow-wrap: break-word;
+}
+
+fieldset {
+  border: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
