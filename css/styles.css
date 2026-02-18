@@ -39,6 +39,7 @@
   --sp-8: 0.5rem;
   --sp-12: 0.75rem;
   --sp-16: 1rem;
+  --sp-20: 1.25rem;
   --sp-24: 1.5rem;
   --sp-32: 2rem;
   --sp-40: 2.5rem;
@@ -70,6 +71,7 @@ body {
   font-weight: var(--fw-regular);
   line-height: var(--lh-150);
   color: var(--clr-grey-900);
+  accent-color: var(--clr-green-600);
 }
 
 p,
@@ -131,12 +133,14 @@ button {
   background-color: var(--clr-white);
   width: 100%;
   max-width: 46rem;
+  border-radius: var(--sp-16);
 }
 
 .title {
   font-size: var(--fs-32);
   font-weight: var(--fw-bold);
   line-height: var(--lh-100);
+  letter-spacing: -0.0625rem;
 }
 
 .form {
@@ -198,14 +202,36 @@ button {
   gap: var(--sp-8);
 }
 
-.form-group label,
-.form-group legend {
-  display: flex;
-  gap: var(--sp-8);
-}
-
 .form-group legend {
   margin-block-end: var(--sp-16);
+}
+
+.form-group label span,
+.form-group legend span {
+  color: var(--clr-green-600);
+}
+
+.form-group input,
+.form-group textarea,
+.form-item {
+  font-size: var(--fs-18);
+  padding-block: var(--sp-12);
+  padding-inline: var(--sp-24);
+  border: 0.0625rem solid var(--clr-grey-500);
+  border-radius: var(--sp-8);
+}
+
+.form-group input:is([type="radio"], [type="checkbox"]) {
+  width: var(--sp-20);
+  aspect-ratio: 1;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.form-group textarea {
+  resize: block;
+  height: 4lh;
 }
 
 .query-group {
@@ -225,6 +251,14 @@ button {
   align-items: center;
   gap: var(--sp-12);
   width: 100%;
+  position: relative;
+}
+
+.form-item label::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
 }
 
 .checkbox-wrapper {
@@ -235,6 +269,20 @@ button {
 
 .error {
   color: var(--clr-red);
+}
+
+/****************************************************
+ ********************   BUTTON   ********************
+ ****************************************************/
+
+.btn-primary {
+  font-size: var(--fs-18);
+  font-weight: var(--fw-bold);
+  padding-block: var(--sp-16);
+  padding-inline: var(--sp-40);
+  border-radius: var(--sp-8);
+  background-color: var(--clr-green-600);
+  color: var(--clr-white);
 }
 
 /****************************************************
