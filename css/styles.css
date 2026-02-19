@@ -219,6 +219,31 @@ button {
   padding-inline: var(--sp-24);
   border: 0.0625rem solid var(--clr-grey-500);
   border-radius: var(--sp-8);
+  color: var(--clr-grey-900);
+  transition: border-color 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .form-group input:hover,
+  .form-group textarea:hover,
+  .form-item:hover,
+  .form-item:has(input:checked):hover {
+    border-color: var(--clr-green-600);
+    background-color: transparent;
+  }
+}
+
+.form-item:has(input:checked) {
+  background-color: var(--clr-green-200);
+  border-color: var(--clr-green-600);
+}
+
+.form-group input:not([type="radio"]):focus-visible,
+.form-group textarea:focus-visible,
+.form-item:has(input:focus-visible) {
+  outline: 0.25rem solid hsl(from var(--clr-green-600) h s l / 0.5);
+  outline-offset: 0.125rem;
+  border-color: var(--clr-green-600);
 }
 
 .form-group input:is([type="radio"], [type="checkbox"]) {
@@ -269,6 +294,16 @@ button {
 
 .error {
   color: var(--clr-red);
+  display: none;
+}
+
+.form-group.has-error .error {
+  display: block;
+}
+
+.form-group.has-error input,
+.form-group.has-error textarea {
+  border-color: var(--clr-red);
 }
 
 /****************************************************
@@ -283,6 +318,19 @@ button {
   border-radius: var(--sp-8);
   background-color: var(--clr-green-600);
   color: var(--clr-white);
+  transition: background-color 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover {
+    background-color: hsl(from var(--clr-green-600) h s calc(l - 10));
+  }
+}
+
+.btn-primary:focus-visible,
+.btn-primary:active {
+  outline: 0.25rem solid hsl(from var(--clr-green-600) h s l / 0.5);
+  outline-offset: 0.125rem;
 }
 
 /****************************************************
